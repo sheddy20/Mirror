@@ -1,3 +1,5 @@
+import 'package:Mirror/Screens/button.dart';
+import 'package:Mirror/Screens/image.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -16,24 +18,44 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.purple[400],
-      body: Center(
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        color: Colors.purple[400],
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 400.0,
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Garden Of Oasis Mauritus',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.none,
+                      fontSize: 30.0,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            RaisedButton(
-              child: Text("Login Button"),
-              color: Colors.black,
-              textColor: Colors.white,
-              onPressed: () {},
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50.0),
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'Book Today For \$500',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.none,
+                      fontSize: 30.0,
+                    ),
+                  ),
+                ),
+              ],
             ),
+            MyImages(),
+            MyButton(),
           ],
         ),
       ),
