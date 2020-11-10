@@ -30,7 +30,7 @@ class Button extends StatelessWidget {
           ),
         ),
         onPressed: () => button(context),
-        color: Colors.deepPurpleAccent[400],
+        color: Colors.blueGrey[500],
         textColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.0),

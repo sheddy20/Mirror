@@ -1,3 +1,4 @@
+import 'package:Mirror/Drawer/drawer.dart';
 import 'package:Mirror/Screens/button.dart';
 import 'package:Mirror/Screens/button1.dart';
 import 'package:Mirror/Screens/tour.dart';
@@ -22,12 +23,19 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Music Festival"),
-        backgroundColor: Colors.deepPurpleAccent[400],
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: () {},
-        ),
+        backgroundColor: Colors.blueGrey[500],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
+        ],
       ),
+      drawer: MyDrawer(),
       body: Center(
         child: Container(
           color: Colors.black,
@@ -44,7 +52,7 @@ class HomePage extends StatelessWidget {
                   "Welcome To Taylor's 1989 World Tour",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 30.0,
+                    fontSize: 28.0,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1.5,
                     decoration: TextDecoration.none,
