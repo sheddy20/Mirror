@@ -21,33 +21,62 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("DatePicker Widgets"),
-        backgroundColor: Colors.deepPurple[400],
+        title: Text("Music Festival"),
+        backgroundColor: Colors.deepPurpleAccent[400],
         leading: IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {},
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            Text(
-              "Welcome To Taylors 1989 World Tour",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
-                decoration: TextDecoration.none,
+        child: Container(
+          color: Colors.black,
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  left: 30.0,
+                  right: 10.0,
+                  top: 10.0,
+                  bottom: 10.0,
+                ),
+                child: Text(
+                  "Welcome To Taylor's 1989 World Tour",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.5,
+                    decoration: TextDecoration.none,
+                  ),
+                ),
               ),
-            ),
-            MyImages(),
-            SizedBox(
-              height: 50.0,
-            ),
-            Button(),
-            Button1(),
-          ],
+              MyImages(),
+              Button(),
+              SizedBox(height: 20.0),
+              Divider(
+                color: Colors.white,
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => Button1(),
+                    ),
+                  );
+                },
+                child: Text(
+                  "Go To DatePicker",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

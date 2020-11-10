@@ -21,9 +21,16 @@ class Button extends StatelessWidget {
       height: 50.0,
       child: RaisedButton(
         elevation: 50.8,
-        child: Text("Book Ticket For 1989 Tour"),
+        child: Text(
+          "Book Ticket",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 23.0,
+            letterSpacing: 1.8,
+          ),
+        ),
         onPressed: () => button(context),
-        color: Colors.black,
+        color: Colors.deepPurpleAccent[400],
         textColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40.0),

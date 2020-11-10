@@ -10,6 +10,7 @@ class MyImages extends StatelessWidget {
         maxScale: 1.6,
         child: Image.asset(
           "Assets/Images/taylor1.jpg",
+          height: 400.0,
         ),
       ),
     );
