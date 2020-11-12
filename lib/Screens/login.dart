@@ -16,8 +16,8 @@ class Login extends StatelessWidget {
               child: WaveWidget(
                 config: CustomConfig(
                   gradients: [
-                    [Colors.deepPurple, Colors.deepPurple.shade200],
-                    [Colors.indigo.shade200, Colors.purple.shade200],
+                    [Colors.deepPurple.shade400, Colors.deepPurple.shade200],
+                    [Colors.deepPurple.shade400, Colors.deepPurple.shade400],
                   ],
                   durations: [19440, 10800],
                   heightPercentages: [0.20, 0.25],
@@ -41,10 +41,10 @@ class Login extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Mirror",
+                      "MIRROR",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.white70,
+                        color: Colors.white,
                         fontSize: 28.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -108,7 +108,7 @@ class Login extends StatelessWidget {
                       padding: EdgeInsets.all(30.0),
                       child: RaisedButton(
                         padding: EdgeInsets.symmetric(vertical: 16.0),
-                        color: Colors.purple.shade300,
+                        color: Colors.pink.shade400,
                         child: Text(
                           "Login",
                           style: TextStyle(
@@ -131,7 +131,7 @@ class Login extends StatelessWidget {
                     Text(
                       "Forgot your password",
                       style: TextStyle(
-                        color: Colors.white70,
+                        color: Colors.white,
                       ),
                     ),
                   ],
