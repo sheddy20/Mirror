@@ -1,3 +1,4 @@
+import 'package:Mirror/Screens/login.dart';
 import 'package:Mirror/models/list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Mirror",
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: Login(),
     );
   }
 }
