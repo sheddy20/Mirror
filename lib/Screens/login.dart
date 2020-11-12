@@ -94,7 +94,7 @@ class Login extends StatelessWidget {
                           border: OutlineInputBorder(
                             borderSide: BorderSide.none,
                             borderRadius:
-                                BorderRadius.all(Radius.circular(40.0)),
+                                BorderRadius.all(Radius.circular(50.0)),
                           ),
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 20.0,
@@ -112,7 +112,7 @@ class Login extends StatelessWidget {
                         child: Text(
                           "Login",
                           style: TextStyle(
-                            color: Colors.white70,
+                            color: Colors.white,
                           ),
                         ),
                         shape: RoundedRectangleBorder(
@@ -160,7 +160,7 @@ class Login extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10.0),
+                        SizedBox(width: 10.0),
                         Expanded(
                           child: RaisedButton(
                             child: Text("Twitter"),
