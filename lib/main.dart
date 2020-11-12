@@ -1,8 +1,6 @@
-import 'package:Mirror/Drawer/drawer.dart';
-import 'package:Mirror/Screens/button.dart';
-import 'package:Mirror/Screens/button1.dart';
-import 'package:Mirror/Screens/tour.dart';
+import 'package:Mirror/models/list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,80 +10,103 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Mirror",
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  TabController myController;
+
+  @override
+  void initState() {
+    super.initState();
+    myController = TabController(length: 4, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Music Festival"),
-        backgroundColor: Colors.blueGrey[500],
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      drawer: MyDrawer(),
-      body: Center(
-        child: Container(
-          color: Colors.black,
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.only(
-                  left: 30.0,
-                  right: 10.0,
-                  top: 10.0,
-                  bottom: 10.0,
-                ),
-                child: Text(
-                  "Welcome To Taylor's 1989 World Tour",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5,
-                    decoration: TextDecoration.none,
-                  ),
-                ),
-              ),
-              MyImages(),
-              Button(),
-              SizedBox(height: 20.0),
-              Divider(
-                color: Colors.white,
-              ),
-              FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => Button1(),
-                    ),
-                  );
-                },
-                child: Text(
-                  "Go To DatePicker",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
+        title: Text(
+          "Mirror",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22.0,
+            fontWeight: FontWeight.w600,
           ),
         ),
+        leading: Padding(
+          padding: EdgeInsets.only(right: 20.0),
+          child: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: () {},
+          ),
+        ),
+        backgroundColor: Colors.deepPurpleAccent[400],
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Icon(Icons.search),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 16.0),
+            child: PopupMenuButton(
+              itemBuilder: (BuildContext context) {
+                return [
+                  PopupMenuItem(
+                    child: Text("New chat room"),
+                  ),
+                  PopupMenuItem(
+                    child: Text("New broadcast "),
+                  ),
+                  PopupMenuItem(
+                    child: Text("Mirror Web"),
+                  ),
+                  PopupMenuItem(
+                    child: Text("Archive messages"),
+                  ),
+                  PopupMenuItem(
+                    child: Text("Settings"),
+                  ),
+                ];
+              },
+            ),
+          ),
+        ],
+        bottom: TabBar(
+          tabs: [
+            Tab(child: (Icon(Icons.camera_alt))),
+            Tab(child: Text("ONLINE")),
+            Tab(child: Text("STATUS")),
+            Tab(child: Text("CHATS")),
+          ],
+          indicatorColor: Colors.white,
+          controller: myController,
+        ),
+      ),
+      body: ListView.builder(itemBuilder: (counter, index) {
+        return Card(
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("Assets/Images/taylor1.jpg"),
+            ),
+            title: Text(myListItem[index]),
+            subtitle: Text("${myListItem[index]} Unread"),
+            trailing: Icon(Icons.arrow_right),
+          ),
+        );
+      }),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.favorite),
+        backgroundColor: Colors.deepPurpleAccent[400],
+        onPressed: () {},
       ),
     );
   }
