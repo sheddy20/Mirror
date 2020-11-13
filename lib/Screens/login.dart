@@ -45,6 +45,7 @@ class Login extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
+                        fontFamily: "Pacifico",
                         fontSize: 28.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -113,6 +114,7 @@ class Login extends StatelessWidget {
                           "Login",
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 20.0,
                           ),
                         ),
                         shape: RoundedRectangleBorder(
